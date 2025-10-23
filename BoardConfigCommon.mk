@@ -15,6 +15,8 @@
 #
 
 PLATFORM_PATH := device/xiaomi/msm8998-common
+# Workaround Fix build issue
+BUILD_BROKEN_DUP_RULES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -97,6 +99,21 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Properties
+# TODP: resolve duplicate props 
+#error: found duplicate sysprop assignments:
+#ro.lmk.upgrade_pressure=100
+#ro.lmk.upgrade_pressure=40
+#error: found duplicate sysprop assignments:
+#ro.lmk.medium=800
+#ro.lmk.medium=701
+#error: found duplicate sysprop assignments:
+#ro.lmk.critical_upgrade=false
+#ro.lmk.critical_upgrade=true
+#error: found duplicate sysprop assignments:
+#ro.lmk.downgrade_pressure=100
+#ro.lmk.downgrade_pressure=60
+
+
 TARGET_PRODUCT_PROP += $(PLATFORM_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP += $(PLATFORM_PATH)/system_ext.prop
 TARGET_VENDOR_PROP += $(PLATFORM_PATH)/vendor.prop
