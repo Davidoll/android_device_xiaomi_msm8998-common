@@ -17,6 +17,7 @@
 PLATFORM_PATH := device/xiaomi/msm8998-common
 # Workaround Fix build issue
 # BUILD_BROKEN_DUP_RULES := true
+SELINUX_IGNORE_NEVERALLOWS := true
 
 
 # Architecture
