@@ -9,3 +9,8 @@ void dng_area_task::ProcessOnThread(uint32_t threadIndex, const dng_rect& area,
                                     const dng_point& tileSize, dng_abort_sniffer* sniffer) {
     ProcessOnThread(threadIndex, area, tileSize, sniffer, nullptr);
 }
+
+void dng_area_task::ProcessOnThread(uint32_t threadIndex, const dng_rect& area,
+                                    const dng_point& tileSize, dng_abort_sniffer* sniffer,
+                                    dng_area_task_progress* progress) {
+}
